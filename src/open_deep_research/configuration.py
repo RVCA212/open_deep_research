@@ -13,9 +13,9 @@ DEFAULT_REPORT_STRUCTURE = """Use this structure to create a report on the user-
 
 2. Main Body Sections:
    - Each section should focus on a sub-topic of the user-provided topic
-   
+
 3. Conclusion
-   - Aim for 1 structural element (either a list of table) that distills the main body sections 
+   - Aim for 1 structural element (either a list of table) that distills the main body sections
    - Provide a concise summary of the report"""
 
 class SearchAPI(Enum):
@@ -34,8 +34,9 @@ class Configuration:
     max_search_depth: int = 2 # Maximum number of reflection + search iterations
     planner_provider: PlannerProvider = PlannerProvider.OPENAI # Defaults to OpenAI as provider
     planner_model: str = "o3-mini" # Defaults to OpenAI o3-mini as planner model
-    writer_model: str = "claude-3-5-sonnet-latest" # Defaults to Anthropic as provider
+    writer_model: str = "o3-mini" # Defaults to Anthropic as provider
     search_api: SearchAPI = SearchAPI.TAVILY # Default to TAVILY
+    auto_approve: bool = True  # Automatically approve report plan without human feedback
 
     @classmethod
     def from_runnable_config(
