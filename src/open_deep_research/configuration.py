@@ -19,7 +19,6 @@ DEFAULT_REPORT_STRUCTURE = """Use this structure to create a report on the user-
    - Provide a concise summary of the report"""
 
 class SearchAPI(Enum):
-    PERPLEXITY = "perplexity"
     TAVILY = "tavily"
 
 class PlannerProvider(Enum):
